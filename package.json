@@ -3,7 +3,13 @@
   "main": "./lib/ide-dlang",
   "version": "1.0.1",
   "description": "A short description of your package",
-  "keywords": [],
+  "keywords": [
+    "dlang",
+    "d",
+    "atom-ide",
+    "ide",
+    "ide-d"
+  ],
   "repository": "https://github.com/LaurentTreguier/ide-dlang",
   "license": "MIT",
   "engines": {
