@@ -1,7 +1,8 @@
 # Atom-IDE: Dlang
 
-An Atom-IDE package for [Dlang](https://dlang.org).
-Uses [DLS](https://github.com/LaurentTreguier/dls) as Language Server, which in turn uses DCD, DFMT (and D-Scanner in the future) to provide language features.
+An Atom-IDE package for [Dlang](https://dlang.org). Provides syntax highlighting for D and preliminary Atom-IDE integration.
+
+[DLS](https://github.com/LaurentTreguier/dls) is used as a Language Server, which in turn uses DCD, DFMT (and D-Scanner in the future) to provide language features.
 For now few features are implemented, but the server will propose updates as new features come.
 
 ## Requirements
