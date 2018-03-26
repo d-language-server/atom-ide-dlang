@@ -1,0 +1,135 @@
+{
+  "name": "ide-dlang",
+  "main": "./lib/ide-dlang",
+  "version": "1.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "repository": "https://github.com/LaurentTreguier/ide-dlang",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.21.0 <2.0.0"
+  },
+  "activationHooks": [
+    "ide-dlang:grammar-used"
+  ],
+  "enhancedScopes": [
+    "source.d"
+  ],
+  "configSchema": {
+    "dlsPath": {
+      "title": "Path to the dls executable. Will be updated automatically, do not change.",
+      "type": "string",
+      "default": ""
+    },
+    "dls": {
+      "title": "DLS configuration",
+      "type": "object",
+      "properties": {
+        "general": {
+          "title": "General",
+          "type": "object",
+          "properties": {
+            "importPaths": {
+              "title": "Import paths",
+              "type": "array",
+              "default": []
+            }
+          }
+        },
+        "formatter": {
+          "title": "Formatter configuration",
+          "type": "object",
+          "properties": {
+            "endOfLine": {
+              "title": "End of line",
+              "type": "string",
+              "enum": [
+                "lf",
+                "cr",
+                "crlf"
+              ],
+              "default": "lf"
+            },
+            "maxLineLength": {
+              "title": "Max line length",
+              "type": "number",
+              "default": 120
+            },
+            "dfmtBraceStyle": {
+              "title": "Brace style",
+              "type": "string",
+              "enum": [
+                "allman",
+                "otbs",
+                "stroustrup"
+              ],
+              "default": "allman"
+            },
+            "dfmtSoftMaxLineLength": {
+              "title": "Soft max line length",
+              "type": "number",
+              "default": 80
+            },
+            "dfmtAlignSwitchStatements": {
+              "title": "Align switch statements",
+              "type": "boolean",
+              "default": true
+            },
+            "dfmtOutdentAttributes": {
+              "title": "Outdent attributes",
+              "type": "boolean",
+              "default": true
+            },
+            "dfmtSplitOperatorAtLineEnd": {
+              "title": "Split operator at line end",
+              "type": "boolean",
+              "default": false
+            },
+            "dfmtSpaceAfterCast": {
+              "title": "Space after cast",
+              "type": "boolean",
+              "default": true
+            },
+            "dfmtSpaceAfterKeywords": {
+              "title": "Space after keywords",
+              "type": "boolean",
+              "default": true
+            },
+            "dfmtSpaceBeforeFunctionParameters": {
+              "title": "Space before function parameters",
+              "type": "boolean",
+              "default": false
+            },
+            "dfmtSelectiveImportSpace": {
+              "title": "Selective import space",
+              "type": "boolean",
+              "default": true
+            },
+            "dfmtCompactLabeledStatements": {
+              "title": "Compact labeled statements",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "consumedServices": {},
+  "providedServices": {
+    "autocomplete.provider": {
+      "versions": {
+        "2.0.0": "provideAutocomplete"
+      }
+    },
+    "code-format.range": {
+      "versions": {
+        "0.1.0": "provideCodeFormat"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-languageclient": "^0.9.4"
+  },
+  "devDependencies": {}
+}
