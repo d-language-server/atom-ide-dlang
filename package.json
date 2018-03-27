@@ -31,8 +31,8 @@
       "title": "DLS configuration",
       "type": "object",
       "properties": {
-        "general": {
-          "title": "General",
+        "symbol": {
+          "title": "Symbols",
           "type": "object",
           "properties": {
             "importPaths": {
@@ -42,8 +42,8 @@
             }
           }
         },
-        "formatter": {
-          "title": "Formatter configuration",
+        "format": {
+          "title": "Formatting",
           "type": "object",
           "properties": {
             "endOfLine": {
