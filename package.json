@@ -128,6 +128,11 @@
         "2.0.0": "provideAutocomplete"
       }
     },
+    "definitions": {
+      "versions": {
+        "0.1.0": "provideDefinitions"
+      }
+    },
     "code-format.range": {
       "versions": {
         "0.1.0": "provideCodeFormat"
@@ -135,7 +140,7 @@
     }
   },
   "dependencies": {
-    "atom-languageclient": "^0.9.4"
+    "atom-languageclient": "^0.9.5"
   },
   "devDependencies": {}
 }
