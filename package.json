@@ -42,6 +42,17 @@
             }
           }
         },
+        "analysis": {
+          "title": "Analysis",
+          "type": "object",
+          "properties": {
+            "configFile": {
+              "title": "D-Scanner config file",
+              "type": "string",
+              "default": "dscanner.ini"
+            }
+          }
+        },
         "format": {
           "title": "Formatting",
           "type": "object",
@@ -121,7 +132,13 @@
       }
     }
   },
-  "consumedServices": {},
+  "consumedServices": {
+    "linter-indie": {
+      "versions": {
+        "2.0.0": "consumeLinterV2"
+      }
+    }
+  },
   "providedServices": {
     "autocomplete.provider": {
       "versions": {
