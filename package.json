@@ -72,6 +72,11 @@
               "type": "number",
               "default": 120
             },
+            "dfmtAlignSwitchStatements": {
+              "title": "Align switch statements",
+              "type": "boolean",
+              "default": true
+            },
             "dfmtBraceStyle": {
               "title": "Brace style",
               "type": "string",
@@ -82,25 +87,15 @@
               ],
               "default": "allman"
             },
-            "dfmtSoftMaxLineLength": {
-              "title": "Soft max line length",
-              "type": "number",
-              "default": 80
-            },
-            "dfmtAlignSwitchStatements": {
-              "title": "Align switch statements",
-              "type": "boolean",
-              "default": true
-            },
             "dfmtOutdentAttributes": {
               "title": "Outdent attributes",
               "type": "boolean",
               "default": true
             },
-            "dfmtSplitOperatorAtLineEnd": {
-              "title": "Split operator at line end",
-              "type": "boolean",
-              "default": false
+            "dfmtSoftMaxLineLength": {
+              "title": "Soft max line length",
+              "type": "number",
+              "default": 80
             },
             "dfmtSpaceAfterCast": {
               "title": "Space after cast",
@@ -117,6 +112,11 @@
               "type": "boolean",
               "default": false
             },
+            "dfmtSplitOperatorAtLineEnd": {
+              "title": "Split operator at line end",
+              "type": "boolean",
+              "default": false
+            },
             "dfmtSelectiveImportSpace": {
               "title": "Selective import space",
               "type": "boolean",
@@ -126,6 +126,22 @@
               "title": "Compact labeled statements",
               "type": "boolean",
               "default": true
+            },
+            "dfmtTemplateConstraintStyle": {
+              "title": "Template Constraint Style",
+              "type": "string",
+              "enum": [
+                "conditionalNewlineIndent",
+                "conditionalNewline",
+                "alwaysNewline",
+                "alwaysNewlineIndent"
+              ],
+              "default": "conditionalNewlineIndent"
+            },
+            "dfmtSingleTemplateConstraintIndent": {
+              "title": "Single Template Constraint Indent",
+              "type": "boolean",
+              "default": false
             }
           }
         }
