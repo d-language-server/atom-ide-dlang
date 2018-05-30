@@ -193,8 +193,9 @@
     }
   },
   "dependencies": {
+    "atom-ide-ui": "^0.7.1",
     "atom-languageclient": "^0.9.5",
-    "atom-ide-ui": "^0.7.1"
+    "bytes": "^3.0.0"
   },
   "devDependencies": {}
 }
