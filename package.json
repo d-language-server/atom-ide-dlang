@@ -19,7 +19,8 @@
     "ide-dlang:grammar-used"
   ],
   "enhancedScopes": [
-    "source.d"
+    "source.d",
+    "source.dpp"
   ],
   "configSchema": {
     "dlsPath": {
