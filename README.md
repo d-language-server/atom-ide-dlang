@@ -1,5 +1,7 @@
 # ide-dlang: D support for [Atom IDE](https://ide.atom.io)
 
+[![APMVersion](https://img.shields.io/apm/v/ide-dlang.svg?style=flat-square)](https://atom.io/packages/ide-dlang)
+
 An Atom-IDE package for [Dlang](https://dlang.org).
 Provides syntax highlighting and Atom-IDE integration using the [Language Server protocol](https://microsoft.github.io/language-server-protocol).
 
@@ -12,5 +14,5 @@ Far from every possible feature is implemented, but the server will offer update
 
 ## Requirements
 
-Dub should be installed for the extension to install DLS itself.
+Dub and either DMD or LDC should be installed for the extension to work properly.
 [atom-ide-ui](https://atom.io/packages/atom-ide-ui) should also be installed.
