@@ -23,8 +23,13 @@
     "source.dpp"
   ],
   "configSchema": {
+    "dubPath": {
+      "title": "Path to the dub executable",
+      "type": "string",
+      "default": "dub"
+    },
     "dlsPath": {
-      "title": "Path to the dls executable. Will be updated automatically, do not change.",
+      "title": "Path to the dls executable",
       "type": "string",
       "default": ""
     },
