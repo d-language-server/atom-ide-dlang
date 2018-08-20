@@ -186,7 +186,7 @@
               "default": true
             },
             "dfmtTemplateConstraintStyle": {
-              "title": "Template Constraint Style",
+              "title": "Template constraint style",
               "type": "string",
               "enum": [
                 "conditionalNewlineIndent",
@@ -197,7 +197,7 @@
               "default": "conditionalNewlineIndent"
             },
             "dfmtSingleTemplateConstraintIndent": {
-              "title": "Single Template Constraint Indent",
+              "title": "Single template constraint indent",
               "type": "boolean",
               "default": false
             }
