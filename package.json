@@ -37,6 +37,11 @@
       "title": "DLS initatization options",
       "type": "object",
       "properties": {
+        "autoUpdate": {
+          "title": "Enable auto-updating",
+          "type": "boolean",
+          "default": true
+        },
         "capabilities": {
           "title": "DLS enabled capabilities",
           "type": "object",
