@@ -37,45 +37,51 @@
       "title": "DLS initatization options",
       "type": "object",
       "properties": {
-        "hover": {
-          "title": "Enable hover",
-          "type": "boolean",
-          "default": true
-        },
-        "completion": {
-          "title": "Enable completion",
-          "type": "boolean",
-          "default": true
-        },
-        "definition": {
-          "title": "Enable go-to-definition",
-          "type": "boolean",
-          "default": true
-        },
-        "documentHighlight": {
-          "title": "Enable symbol highlighting",
-          "type": "boolean",
-          "default": true
-        },
-        "documentSymbol": {
-          "title": "Enable document symbol search",
-          "type": "boolean",
-          "default": true
-        },
-        "workspaceSymbol": {
-          "title": "Enable workspace symbol search",
-          "type": "boolean",
-          "default": true
-        },
-        "documentFormatting": {
-          "title": "Enable formatting",
-          "type": "boolean",
-          "default": true
-        },
-        "rename": {
-          "title": "Enable renaming",
-          "type": "boolean",
-          "default": true
+        "capabilities": {
+          "title": "DLS enabled capabilities",
+          "type": "object",
+          "properties": {
+            "hover": {
+              "title": "Enable hover",
+              "type": "boolean",
+              "default": true
+            },
+            "completion": {
+              "title": "Enable completion",
+              "type": "boolean",
+              "default": true
+            },
+            "definition": {
+              "title": "Enable go-to-definition",
+              "type": "boolean",
+              "default": true
+            },
+            "documentHighlight": {
+              "title": "Enable symbol highlighting",
+              "type": "boolean",
+              "default": true
+            },
+            "documentSymbol": {
+              "title": "Enable document symbol search",
+              "type": "boolean",
+              "default": true
+            },
+            "workspaceSymbol": {
+              "title": "Enable workspace symbol search",
+              "type": "boolean",
+              "default": true
+            },
+            "documentFormatting": {
+              "title": "Enable formatting",
+              "type": "boolean",
+              "default": true
+            },
+            "rename": {
+              "title": "Enable renaming",
+              "type": "boolean",
+              "default": true
+            }
+          }
         }
       }
     },
