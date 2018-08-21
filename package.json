@@ -10,7 +10,7 @@
     "ide",
     "ide-d"
   ],
-  "repository": "https://github.com/LaurentTreguier/ide-dlang",
+  "repository": "https://github.com/d-language-server/atom-ide-dlang",
   "license": "MIT",
   "engines": {
     "atom": ">=1.21.0 <2.0.0"
