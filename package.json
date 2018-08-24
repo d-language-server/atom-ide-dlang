@@ -239,6 +239,11 @@
         "2.0.0": "provideAutocomplete"
       }
     },
+    "builder": {
+      "versions": {
+        "2.0.0": "provideBuild"
+      }
+    },
     "code-format.range": {
       "versions": {
         "0.1.0": "provideCodeFormat"
@@ -260,10 +265,15 @@
       }
     }
   },
+  "package-deps": [
+    "atom-ide-ui",
+    "build"
+  ],
   "dependencies": {
     "atom-ide-ui": "^0.7.2",
-    "atom-languageclient": "^0.9.5",
-    "bytes": "^3.0.0"
+    "atom-languageclient": "^0.9.6",
+    "bytes": "^3.0.0",
+    "glob": "^7.1.2"
   },
   "devDependencies": {}
 }
