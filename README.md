@@ -3,7 +3,7 @@
 [![APMVersion](https://img.shields.io/apm/v/ide-dlang.svg?style=flat-square)](https://atom.io/packages/ide-dlang)
 
 An Atom-IDE package for [Dlang](https://dlang.org).
-Provides syntax highlighting and Atom-IDE integration using the [Language Server protocol](https://microsoft.github.io/language-server-protocol).
+Provides syntax highlighting, dub build integration with [atom-build](https://atom.io/packages/build) and Atom-IDE integration using the [Language Server protocol](https://microsoft.github.io/language-server-protocol).
 
 ## Features
 
