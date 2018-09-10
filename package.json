@@ -61,6 +61,16 @@
               "type": "boolean",
               "default": true
             },
+            "typeDefinition": {
+              "title": "Enable go-to-type-definition",
+              "type": "boolean",
+              "default": true
+            },
+            "references": {
+              "title": "Enable references search",
+              "type": "boolean",
+              "default": true
+            },
             "documentHighlight": {
               "title": "Enable symbol highlighting",
               "type": "boolean",
