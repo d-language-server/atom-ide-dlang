@@ -91,6 +91,16 @@
               "type": "boolean",
               "default": true
             },
+            "documentRangeFormatting": {
+              "title": "Enable range formatting",
+              "type": "boolean",
+              "default": true
+            },
+            "documentOnTypeFormatting": {
+              "title": "Enable on type formatting",
+              "type": "boolean",
+              "default": true
+            },
             "rename": {
               "title": "Enable renaming",
               "type": "boolean",
