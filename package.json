@@ -264,6 +264,16 @@
         "2.0.0": "provideBuild"
       }
     },
+    "code-format.onSave": {
+      "versions": {
+        "0.1.0": "provideOnSaveCodeFormat"
+      }
+    },
+    "code-format.onType": {
+      "versions": {
+        "0.1.0": "provideOnTypeCodeFormat"
+      }
+    },
     "code-format.range": {
       "versions": {
         "0.1.0": "provideCodeFormat"
