@@ -86,6 +86,11 @@
               "type": "boolean",
               "default": true
             },
+            "codeAction": {
+              "title": "Enable code actions",
+              "type": "boolean",
+              "default": true
+            },
             "documentFormatting": {
               "title": "Enable formatting",
               "type": "boolean",
@@ -262,6 +267,11 @@
     "builder": {
       "versions": {
         "2.0.0": "provideBuild"
+      }
+    },
+    "code-actions": {
+      "versions": {
+        "0.1.0": "provideCodeActions"
       }
     },
     "code-format.onSave": {
