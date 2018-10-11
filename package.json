@@ -42,6 +42,11 @@
           "type": "boolean",
           "default": true
         },
+        "catchErrors": {
+          "title": "Catch and ignore errors (WARNING: UNSAFE)",
+          "type": "boolean",
+          "default": false
+        },
         "capabilities": {
           "title": "DLS enabled capabilities",
           "type": "object",
