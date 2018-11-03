@@ -5,6 +5,9 @@
         "d",
         "di"
     ],
+    "firstLineMatch": "#!.*rdmd",
+    "foldingStartMarker": "\\{",
+    "foldingStopMarker": "\\}",
     "patterns": [
         {
             "match": "\\b(module)\\s+([^;]+)",
@@ -32,17 +35,10 @@
             ]
         },
         {
-            "begin": "\\b(?:(static|public)\\s+)?(import)\\b(?!\\s*\\})",
+            "begin": "\\b(import)\\b(?!\\s*\\})",
             "end": ";",
             "beginCaptures": {
                 "1": {
-                    "patterns": [
-                        {
-                            "include": "$self"
-                        }
-                    ]
-                },
-                "2": {
                     "name": "keyword.control.import.d"
                 }
             },
@@ -53,10 +49,27 @@
             },
             "patterns": [
                 {
-                    "include": "#import-bindings"
+                    "name": "keyword.operator.assignment.d",
+                    "match": "="
                 },
                 {
-                    "include": "#import-aliases"
+                    "name": "punctuation.accessor.d",
+                    "match": ":"
+                },
+                {
+                    "name": "punctuation.separator.d",
+                    "match": ","
+                },
+                {
+                    "include": "#import-support"
+                },
+                {
+                    "name": "entity.name.namespace.d",
+                    "match": "\\b\\w+\\.[\\w.]+\\b"
+                },
+                {
+                    "name": "entity.name.d",
+                    "match": "\\b[\\w.]+\\b"
                 }
             ]
         },
@@ -93,12 +106,15 @@
             ]
         },
         {
-            "match": "\\b(version)\\s*(\\(\\s*\\w+\\s*\\))",
+            "match": "\\b(version)\\s*(\\()(\\s*\\w+\\s*)(\\))",
             "captures": {
                 "1": {
                     "name": "keyword.control.branch.version.d"
                 },
                 "2": {
+                    "name": "punctuation.section.parens.begin.d"
+                },
+                "3": {
                     "name": "meta.parens.d",
                     "patterns": [
                         {
@@ -122,6 +138,9 @@
                             "match": "\\)"
                         }
                     ]
+                },
+                "4": {
+                    "name": "punctuation.section.parens.end.d"
                 }
             }
         },
@@ -194,7 +213,7 @@
             }
         },
         {
-            "match": "\\b(extern)\\s*((\\()\\s*(?:(C|D|Objective-C|Pascal|System|Windows)|(C\\+\\+)(?:\\s*,\\s*([\\w.]+))?)\\s*(\\)))",
+            "match": "\\b(extern)\\s*(\\()\\s*((C|D|Objective-C|Pascal|System|Windows)|(C\\+\\+)(?:\\s*(,)\\s*([\\w.]+))?|([^\\)]+))\\s*(\\))",
             "captures": {
                 "1": {
                     "patterns": [
@@ -204,10 +223,10 @@
                     ]
                 },
                 "2": {
-                    "name": "meta.parens.d"
+                    "name": "punctuation.section.parens.begin.d"
                 },
                 "3": {
-                    "name": "punctuation.section.parens.begin.d"
+                    "name": "meta.parens.d"
                 },
                 "4": {
                     "name": "constant.other.linkage.d"
@@ -216,29 +235,38 @@
                     "name": "constant.other.linkage.d"
                 },
                 "6": {
-                    "name": "entity.name.namespace.d"
+                    "name": "punctuation.separator.d"
                 },
                 "7": {
+                    "name": "entity.name.namespace.d"
+                },
+                "8": {
+                    "name": "invalid.illegal.d"
+                },
+                "9": {
                     "name": "punctuation.section.parens.end.d"
                 }
             }
         },
         {
-            "match": "\\b(scope)\\s*((\\()\\s*(exit|failure|success)\\s*(\\)))",
+            "match": "\\b(scope)\\s*(\\()((?:\\s*(exit|failure|success)\\s*)|([^\\)]+))(\\))",
             "captures": {
                 "1": {
                     "name": "keyword.control.d"
                 },
                 "2": {
-                    "name": "meta.parens.d"
+                    "name": "punctuation.section.parens.begin.d"
                 },
                 "3": {
-                    "name": "punctuation.section.parens.begin.d"
+                    "name": "meta.parens.d"
                 },
                 "4": {
                     "name": "constant.language.scope.d"
                 },
                 "5": {
+                    "name": "invalid.illegal.d"
+                },
+                "6": {
                     "name": "punctuation.section.parens.begin.d"
                 }
             }
@@ -275,17 +303,17 @@
         },
         {
             "contentName": "meta.parens.d",
-            "begin": "\\b(__traits)\\s*((\\()\\s*(?:(isAbstractClass|isArithmetic|isAssociativeArray|isFinalClass|isPOD|isNested|isFuture|isDeprecated|isFloating|isIntegral|isScalar|isStaticArray|isUnsigned|isDisabled|isVirtualFunction|isVirtualMethod|isAbstractFunction|isFinalFunction|isStaticFunction|isOverrideFunction|isTemplate|isRef|isOut|isLazy|isReturnOnStack|isZeroInit|hasMember|identifier|getAliasThis|getAttributes|getFunctionAttributes|getFunctionVariadicStyle|getLinkage|getMember|getOverloads|getParameterStorageClasses|getPointerBitmap|getProtection|getTargetInfo|getVirtualFunctions|getVirtualMethods|getUnitTests|parent|classInstanceSize|getVirtualIndex|allMembers|derivedMembers|isSame|compiles)|(\\w+)))\\b",
+            "begin": "\\b(__traits)\\s*(\\()\\s*((isAbstractClass|isArithmetic|isAssociativeArray|isFinalClass|isPOD|isNested|isFuture|isDeprecated|isFloating|isIntegral|isScalar|isStaticArray|isUnsigned|isDisabled|isVirtualFunction|isVirtualMethod|isAbstractFunction|isFinalFunction|isStaticFunction|isOverrideFunction|isTemplate|isRef|isOut|isLazy|isReturnOnStack|isZeroInit|hasMember|identifier|getAliasThis|getAttributes|getFunctionAttributes|getFunctionVariadicStyle|getLinkage|getMember|getOverloads|getParameterStorageClasses|getPointerBitmap|getProtection|getTargetInfo|getVirtualFunctions|getVirtualMethods|getUnitTests|parent|classInstanceSize|getVirtualIndex|allMembers|derivedMembers|isSame|compiles)|(\\w+))\\b",
             "end": "\\)",
             "beginCaptures": {
                 "1": {
                     "name": "keyword.other.d"
                 },
                 "2": {
-                    "name": "meta.parens.d"
+                    "name": "punctuation.section.parens.begin.d"
                 },
                 "3": {
-                    "name": "punctuation.section.parens.begin.d"
+                    "name": "meta.parens.d"
                 },
                 "4": {
                     "name": "support.constant.trait.d"
@@ -327,6 +355,18 @@
             "include": "#string-literal"
         },
         {
+            "name": "comment.line.special.d",
+            "match": "#line\\s+(\\S+)\\s+(\"[^\"]*\")\\s*$",
+            "captures": {
+                "1": {
+                    "name": "constant.numeric.integer.d"
+                },
+                "2": {
+                    "name": "string.quoted.double.d"
+                }
+            }
+        },
+        {
             "name": "constant.language.boolean.d",
             "match": "\\b(true|false)\\b"
         },
@@ -336,18 +376,34 @@
         },
         {
             "name": "constant.language.d",
-            "match": "\\b__(FILE|FILE_FULL_PATH|MODULE|LINE|FUNCTION|PRETTY_FUNCTION)__\\b"
-        },
-        {
-            "name": "constant.numeric.float.d",
-            "match": "\\b\\d[\\d_]*\\.\\d[\\d_]*([eE][+-]?\\d[\\d_]*)?[fFL]?i?\\b"
+            "match": "\\b__(DATE|EOF|TIME|TIMESTAMP|VENDOR|VERSION)__\\b"
         },
         {
             "include": "#integer-literal"
         },
         {
+            "name": "constant.numeric.hex.float.d",
+            "match": "\\b0[xX]([\\da-fA-F_]+)?\\.?([\\da-fA-F_]+)?[pP][+-]?[\\d_]+([fF]|L)?i?\\b"
+        },
+        {
+            "name": "constant.numeric.float.d",
+            "match": "(\\b\\d[\\d_]*)?\\.?\\d[\\d_]*(?!\\.)([eE][+-]?\\d[\\d_]*)?[fFL]?i?\\b"
+        },
+        {
+            "name": "constant.numeric.float.d",
+            "match": "\\b\\d[\\d_]*\\."
+        },
+        {
             "name": "storage.type.function.arrow.d",
             "match": "=>"
+        },
+        {
+            "match": "^\\s*\\b(body|do|in|out)\\b(?=\\s*($|\\{|\\())",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.d"
+                }
+            }
         },
         {
             "name": "keyword.control.branch.d",
@@ -355,7 +411,7 @@
         },
         {
             "name": "keyword.control.conditional.d",
-            "match": "\\b(else|if)\\b"
+            "match": "\\b(else|(static\\s+)?if)\\b"
         },
         {
             "name": "keyword.control.exception.d",
@@ -371,7 +427,15 @@
         },
         {
             "name": "keyword.control.d",
-            "match": "\\b(asm|body|debug|invariant|return|synchronized|unittest|with)\\b"
+            "match": "\\b(asm|debug|invariant|return|synchronized|unittest|with)\\b"
+        },
+        {
+            "name": "keyword.other.d",
+            "match": "\\b(assert|cast|in|is|macro|mixin|new|out|pragma|typeid|typeof|__traits)\\b"
+        },
+        {
+            "name": "keyword.other.special.d",
+            "match": "\\b__(FILE|FILE_FULL_PATH|MODULE|LINE|FUNCTION|PRETTY_FUNCTION)__\\b"
         },
         {
             "include": "#operator"
@@ -379,10 +443,6 @@
         {
             "name": "punctuation.accessor.d",
             "match": "\\."
-        },
-        {
-            "name": "keyword.other.d",
-            "match": "\\b(assert|cast|in|is|macro|mixin|new|out|pragma|typeid|typeof|__traits)\\b"
         },
         {
             "name": "storage.modifier.attribute.d",
@@ -421,7 +481,7 @@
             }
         },
         {
-            "contentName": "entity.name.namespace.d",
+            "contentName": "meta.parens.d",
             "begin": "\\b(package)\\s*(\\()",
             "end": "\\)",
             "beginCaptures": {
@@ -436,7 +496,13 @@
                 "0": {
                     "name": "punctuation.section.parens.end.d"
                 }
-            }
+            },
+            "patterns": [
+                {
+                    "name": "entity.name.namespace.d",
+                    "match": "[\\w.]+"
+                }
+            ]
         },
         {
             "name": "storage.modifier.visibility.d",
@@ -479,13 +545,13 @@
             "match": "\\b(Error|Exception|Interface|Object|OffsetTypeInfo|RTInfo|Throwable|TypeInfo|TypeInfo_Class)\\b"
         },
         {
-            "match": "\\b([a-z_]\\w*)\\s*(!)(?!=|is\\b|in\\b)",
+            "match": "\\b([a-z_]\\w*)\\s*(!)(?!in\\b|is\\b|=)",
             "captures": {
                 "1": {
                     "name": "entity.name.function.d",
                     "patterns": [
                         {
-                            "include": "#functions-support"
+                            "include": "#function-support"
                         }
                     ]
                 },
@@ -501,7 +567,7 @@
                     "name": "entity.name.function.d",
                     "patterns": [
                         {
-                            "include": "#functions-support"
+                            "include": "#function-support"
                         }
                     ]
                 }
@@ -527,6 +593,10 @@
             "match": "\\b[A-Z]\\w*\\b"
         },
         {
+            "name": "punctuation.separator.d",
+            "match": ","
+        },
+        {
             "name": "punctuation.terminator.d",
             "match": ";"
         },
@@ -541,101 +611,11 @@
         }
     ],
     "repository": {
-        "import-bindings": {
-            "match": "(?:(\\w+)\\s*(=)\\s*)?([\\w.]+)\\s*(:)\\s*([^;]+)",
-            "captures": {
-                "1": {
-                    "name": "entity.name.binding.d"
-                },
-                "2": {
-                    "patterns": [
-                        {
-                            "include": "$self"
-                        }
-                    ]
-                },
-                "3": {
-                    "patterns": [
-                        {
-                            "include": "#import-support"
-                        }
-                    ]
-                },
-                "4": {
-                    "name": "keyword.operator.selection.d"
-                },
-                "5": {
-                    "patterns": [
-                        {
-                            "include": "#import-bindings-list"
-                        }
-                    ]
-                }
-            }
-        },
-        "import-bindings-list": {
-            "match": "(?:(\\w+)\\s*(=)\\s*)?(\\w+)(\\s*,[^;]+)?",
-            "captures": {
-                "1": {
-                    "name": "entity.name.binding.d"
-                },
-                "2": {
-                    "patterns": [
-                        {
-                            "include": "$self"
-                        }
-                    ]
-                },
-                "3": {
-                    "name": "entity.name.d"
-                },
-                "4": {
-                    "patterns": [
-                        {
-                            "include": "#import-bindings-list"
-                        }
-                    ]
-                }
-            }
-        },
-        "import-aliases": {
-            "match": "(?:\\s*,\\s*)?(?:(\\w+)\\s*(=)\\s*)?([\\w.]+)\\s*([^;]+)?",
-            "captures": {
-                "1": {
-                    "name": "entity.name.binding.d"
-                },
-                "2": {
-                    "patterns": [
-                        {
-                            "include": "$self"
-                        }
-                    ]
-                },
-                "3": {
-                    "patterns": [
-                        {
-                            "include": "#import-support"
-                        }
-                    ]
-                },
-                "4": {
-                    "patterns": [
-                        {
-                            "include": "#import-aliases"
-                        }
-                    ]
-                }
-            }
-        },
         "import-support": {
             "patterns": [
                 {
                     "name": "support.type.module.d",
                     "match": "\\b(etc\\.c\\.(curl|(odbc\\.(sql|sqlext|sqltypes|sqlucode)|sqlite3|zlib))|core\\.(atomic|attribute|bitop|checkint|cpuid|demangle|exception|math|memory|runtime|simd|stdc\\.(assert_|complex|ctype|errno|fenv|float_|inttypes|limits|locale|math|signal|stdarg|stddef|stdint|stdio|stdlib|string|tgmath|time|wchar_|wctype)|stdcpp\\.(exception|typeinfo)|sync\\.(barrier|condition|config|exception|mutex|rwmutex|semaphore)|thread|time|vararg)|std\\.(algorithm(\\.(comparison|iteration|mutation|searching|setops|sorting))?|array|ascii|base64|bigint|bitmanip|compiler|complex|concurrency|container(\\.(array|binaryheap|dlist|rbtree|slist|util))?|conv|csv|datetime(\\.(date|interval|stopwatch|systime|timezone))?|demangle|digest\\.(crc|digest|hmac|md|murmurhash|ripemd|sha)|encoding|exception|file|format|functional|getopt|json|math|mathspecial|meta|mmfile|net\\.(curl|isemail)|numeric|outbuffer|parallelism|path|process|random|range(\\.(interfaces|primitives))?|regex|signals|socket|stdint|stdio|string|system|traits|typecons|uni|uri|utf|uuid|variant|windows\\.(charset|syserror)|xml|zip|zlib))\\b"
-                },
-                {
-                    "name": "entity.name.namespace.d",
-                    "match": "\\b[\\w.]+\\b"
                 }
             ]
         },
@@ -736,7 +716,7 @@
                     "end": "\"(c|d|w)?",
                     "patterns": [
                         {
-                            "name": "invalid.illegal.non-hex-char.d",
+                            "name": "invalid.illegal.d",
                             "match": "[^\\s\\da-fA-F]"
                         }
                     ]
@@ -773,29 +753,25 @@
                 }
             ]
         },
-        "integer-literal": {
-            "patterns": [
-                {
-                    "name": "constant.numeric.hex.d",
-                    "match": "\\b0[xX][\\da-fA-F_]+\\.[\\da-fA-F_]+([pP][+-]?\\d[\\d_]*)?i?\\b"
-                },
-                {
-                    "name": "constant.numeric.hex.d",
-                    "match": "\\b0[xX][\\da-fA-F_]+([pP][+-]?\\d[\\d_]*)?i?\\b"
-                },
-                {
-                    "name": "constant.numeric.integer.d",
-                    "match": "\\b\\d[\\d_]*([eE][+-]?\\d[\\d_]*)?(L?[uU]?|[uU]L)?i?\\b"
-                },
-                {
-                    "name": "constant.numeric.integer.binary.d",
-                    "match": "\\b0[bB][01_]+i?\\b"
-                }
-            ]
-        },
         "string-escaped-char": {
             "name": "constant.character.escape.d",
             "match": "\\\\(['\"?\\\\0abnfrtv]|x[\\da-fA-F]{2}|[0-3]?[0-7]{1,2}|u[\\da-fA-F]{4}|U[\\da-fA-F]{8}|&[a-zA-Z]{1,8};)"
+        },
+        "integer-literal": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.binary.integer.d",
+                    "match": "\\b0[bB][01_]+(L?[uU]?|[uU]L)?\\b"
+                },
+                {
+                    "name": "constant.numeric.hex.integer.d",
+                    "match": "\\b0[xX][\\da-fA-F_]+(L?[uU]?|[uU]L)?(?!\\s*(\\.|[pPfF]))\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.d",
+                    "match": "\\b\\d[\\d_]*(L?[uU]?|[uU]L)?(?!\\s*(\\.|[eEfF]))\\b"
+                }
+            ]
         },
         "operator": {
             "patterns": [
@@ -805,7 +781,7 @@
                 },
                 {
                     "name": "keyword.operator.assignment.d",
-                    "match": "(?:\\+|-|\\*|/|~|\\^|\\^\\^)?="
+                    "match": "(\\+|-|\\*|/|~|\\^|\\^\\^)?="
                 },
                 {
                     "name": "keyword.operator.shift.d",
@@ -837,7 +813,7 @@
                 }
             ]
         },
-        "functions-support": {
+        "function-support": {
             "name": "support.function.d",
             "match": "\\b(destroy|factory|opAssign|opBinary|opBinaryRight|opCall|opCmp|opDispatch|opDollar|opEquals|opIndex|opIndexAssign|opIndexOpAssign|opIndexUnary|opOpAssign|opSlice|opUnary|toHash|toString)\\b"
         },
@@ -900,7 +876,7 @@
             ]
         },
         ".util-count-braces": {
-            "name": "meta.block.d",
+            "contentName": "meta.block.d",
             "begin": "\\{",
             "end": "\\}",
             "beginCaptures": {
@@ -920,7 +896,7 @@
             ]
         },
         ".util-count-brackets": {
-            "name": "meta.brackets.d",
+            "contentName": "meta.brackets.d",
             "begin": "\\[",
             "end": "\\]",
             "beginCaptures": {
@@ -935,16 +911,20 @@
             },
             "patterns": [
                 {
-                    "include": "$self"
-                },
-                {
                     "name": "keyword.operator.length.d",
                     "match": "\\$"
+                },
+                {
+                    "name": "punctuation.separator.d",
+                    "match": ":"
+                },
+                {
+                    "include": "$self"
                 }
             ]
         },
         ".util-count-parens": {
-            "name": "meta.parens.d",
+            "contentName": "meta.parens.d",
             "begin": "\\(",
             "end": "\\)",
             "beginCaptures": {
@@ -958,6 +938,10 @@
                 }
             },
             "patterns": [
+                {
+                    "name": "punctuation.separator.d",
+                    "match": ";"
+                },
                 {
                     "include": "$self"
                 }
