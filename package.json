@@ -47,6 +47,11 @@
           "type": "boolean",
           "default": false
         },
+        "logFile": {
+          "title": "Path to a file to log DLS operations",
+          "type": "string",
+          "default": ""
+        },
         "capabilities": {
           "title": "DLS enabled capabilities",
           "type": "object",
