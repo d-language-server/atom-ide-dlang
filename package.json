@@ -26,7 +26,7 @@
     "dubPath": {
       "title": "Path to the dub executable",
       "type": "string",
-      "default": "dub"
+      "default": null
     },
     "dlsPath": {
       "title": "Path to the dls executable",
