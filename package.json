@@ -321,7 +321,7 @@
   ],
   "dependencies": {
     "atom-ide-ui": "^0.7.2",
-    "atom-languageclient": "^0.9.7",
+    "atom-languageclient": "^0.9.8",
     "bytes": "^3.0.0",
     "glob": "^7.1.3"
   },
