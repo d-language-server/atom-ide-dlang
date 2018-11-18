@@ -26,12 +26,21 @@
     "dubPath": {
       "title": "Path to the dub executable",
       "type": "string",
-      "default": null
+      "default": ""
     },
     "dlsPath": {
-      "title": "Path to the dls executable",
+      "title": "Path to the DLS executable",
       "type": "string",
       "default": ""
+    },
+    "connectionType": {
+      "title": "Method used to connect to DLS",
+      "type": "string",
+      "enum": [
+        "stdio",
+        "socket"
+      ],
+      "default": "socket"
     },
     "init": {
       "title": "DLS initatization options",
