@@ -1,7 +1,7 @@
 {
   "name": "ide-dlang",
   "main": "./lib/ide-dlang",
-  "version": "1.11.7",
+  "version": "1.12.2",
   "description": "D language support for Atom-IDE",
   "keywords": [
     "dlang",
@@ -26,12 +26,21 @@
     "dubPath": {
       "title": "Path to the dub executable",
       "type": "string",
-      "default": "dub"
+      "default": ""
     },
     "dlsPath": {
-      "title": "Path to the dls executable",
+      "title": "Path to the DLS executable",
       "type": "string",
       "default": ""
+    },
+    "connectionType": {
+      "title": "Method used to connect to DLS",
+      "type": "string",
+      "enum": [
+        "stdio",
+        "socket"
+      ],
+      "default": "socket"
     },
     "init": {
       "title": "DLS initatization options",
@@ -326,7 +335,7 @@
   ],
   "dependencies": {
     "atom-ide-ui": "^0.7.2",
-    "atom-languageclient": "^0.9.7",
+    "atom-languageclient": "^0.9.8",
     "bytes": "^3.0.0",
     "glob": "^7.1.3"
   },
