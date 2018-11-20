@@ -40,7 +40,7 @@
         "stdio",
         "socket"
       ],
-      "default": "socket"
+      "default": "stdio"
     },
     "init": {
       "title": "DLS initatization options",
