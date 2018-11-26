@@ -15,4 +15,4 @@ Far from every possible feature is implemented, but the server will update itsel
 ## Requirements
 
 Dub and either DMD or LDC should be installed for the extension to work properly.
-[atom-ide-ui](https://atom.io/packages/atom-ide-ui) should also be installed.
+[atom-ide-ui](https://atom.io/packages/atom-ide-ui) and [build](https://atom.io/packages/build) should also be installed.
