@@ -151,6 +151,11 @@
               "title": "Import paths",
               "type": "array",
               "default": []
+            },
+            "listLocalSymbols": {
+              "title": "List local symbols",
+              "type": "boolean",
+              "default": false
             }
           }
         },
