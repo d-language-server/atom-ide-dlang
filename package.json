@@ -34,14 +34,13 @@
       "default": ""
     },
     "connectionType": {
-      "title": "Method used to connect to DLS (default is socket on Windows and stdio otherwise)",
+      "title": "Method used to connect to DLS",
       "type": "string",
       "enum": [
-        "default",
         "stdio",
         "socket"
       ],
-      "default": "default"
+      "default": "stdio"
     },
     "init": {
       "title": "DLS initatization options",
