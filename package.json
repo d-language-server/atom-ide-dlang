@@ -56,6 +56,11 @@
           "type": "boolean",
           "default": false
         },
+        "safeMode": {
+          "title": "Disable processing multiple requests in parallel",
+          "type": "boolean",
+          "default": false
+        },
         "catchErrors": {
           "title": "Catch and ignore errors (WARNING: UNSAFE)",
           "type": "boolean",
