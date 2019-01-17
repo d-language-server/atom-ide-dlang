@@ -72,7 +72,7 @@
           "default": ""
         },
         "capabilities": {
-          "title": "DLS enabled capabilities",
+          "title": "Enabled capabilities",
           "type": "object",
           "properties": {
             "hover": {
@@ -137,6 +137,17 @@
             },
             "rename": {
               "title": "Enable renaming",
+              "type": "boolean",
+              "default": true
+            }
+          }
+        },
+        "symbol": {
+          "title": "Symbol options",
+          "type": "object",
+          "properties": {
+            "autoImports": {
+              "title": "Automatically import projects and their dependencies",
               "type": "boolean",
               "default": true
             }
