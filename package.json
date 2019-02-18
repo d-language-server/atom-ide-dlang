@@ -376,13 +376,13 @@
   "dependencies": {
     "atom-ide-ui": "^0.7.2",
     "atom-languageclient": "^0.9.9",
-    "atom-package-deps": "^4.6.2",
+    "atom-package-deps": "^5.0.0",
     "bytes": "^3.1.0",
     "glob": "^7.1.3"
   },
   "devDependencies": {
     "@types/bytes": "^3.0.0",
     "@types/glob": "^7.1.1",
-    "@types/node": "^8.10.40"
+    "@types/node": "^8.10.42"
   }
 }
