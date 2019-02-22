@@ -14,5 +14,5 @@ Not every possible feature is implemented, but the server will update itself as 
 
 ## Requirements
 
-Dub and either DMD or LDC should be installed for the extension to work properly.
+Dub and a D compiler (DMD, LDC or GDC) should be installed for the extension to work properly.
 [atom-ide-ui](https://atom.io/packages/atom-ide-ui) and [build](https://atom.io/packages/build) should also be installed.
