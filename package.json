@@ -183,6 +183,11 @@
               "title": "D-Scanner config file",
               "type": "string",
               "default": "dscanner.ini"
+            },
+            "filePatterns": {
+              "title": "Patterns for files to analyze (see https://dlang.org/phobos/std_path.html#.globMatch for pattern syntax)",
+              "type": "array",
+              "default": []
             }
           }
         },
@@ -190,6 +195,15 @@
           "title": "Formatting",
           "type": "object",
           "properties": {
+            "engine": {
+              "title": "Formatting engine",
+              "type": "string",
+              "enum": [
+                "dfmt",
+                "indent"
+              ],
+              "default": "dfmt"
+            },
             "endOfLine": {
               "title": "End of line",
               "type": "string",
