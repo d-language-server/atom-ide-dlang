@@ -200,7 +200,7 @@
               "type": "string",
               "enum": [
                 "dfmt",
-                "indent"
+                "builtin"
               ],
               "default": "dfmt"
             },
@@ -214,17 +214,27 @@
               ],
               "default": "lf"
             },
+            "insertFinalNewLine": {
+              "title": "Insert final newline",
+              "type": "boolean",
+              "default": true
+            },
+            "trimTrailingWhitespace": {
+              "title": "Trim trailing whitespace",
+              "type": "boolean",
+              "default": true
+            },
             "maxLineLength": {
               "title": "Max line length",
               "type": "number",
               "default": 120
             },
-            "dfmtAlignSwitchStatements": {
-              "title": "Align switch statements",
-              "type": "boolean",
-              "default": true
+            "softMaxLineLength": {
+              "title": "Soft max line length",
+              "type": "number",
+              "default": 80
             },
-            "dfmtBraceStyle": {
+            "braceStyle": {
               "title": "Brace style",
               "type": "string",
               "enum": [
@@ -234,48 +244,53 @@
               ],
               "default": "allman"
             },
-            "dfmtOutdentAttributes": {
-              "title": "Outdent attributes",
+            "spaceAfterCasts": {
+              "title": "Space after casts",
               "type": "boolean",
               "default": true
             },
-            "dfmtSoftMaxLineLength": {
-              "title": "Soft max line length",
-              "type": "number",
-              "default": 80
-            },
-            "dfmtSpaceAfterCast": {
-              "title": "Space after cast",
-              "type": "boolean",
-              "default": true
-            },
-            "dfmtSpaceAfterKeywords": {
+            "spaceAfterKeywords": {
               "title": "Space after keywords",
               "type": "boolean",
               "default": true
             },
-            "dfmtSpaceBeforeFunctionParameters": {
+            "spaceBeforeAAColons": {
+              "title": "Space after AA colons",
+              "type": "boolean",
+              "default": false
+            },
+            "spaceBeforeFunctionParameters": {
               "title": "Space before function parameters",
               "type": "boolean",
               "default": false
             },
-            "dfmtSplitOperatorAtLineEnd": {
-              "title": "Split operator at line end",
-              "type": "boolean",
-              "default": false
-            },
-            "dfmtSelectiveImportSpace": {
-              "title": "Selective import space",
+            "spaceBeforeSelectiveImportColons": {
+              "title": "Space before selective import colons",
               "type": "boolean",
               "default": true
             },
-            "dfmtCompactLabeledStatements": {
+            "alignSwitchStatements": {
+              "title": "Align switch statements",
+              "type": "boolean",
+              "default": true
+            },
+            "compactLabeledStatements": {
               "title": "Compact labeled statements",
               "type": "boolean",
               "default": true
             },
-            "dfmtTemplateConstraintStyle": {
-              "title": "Template constraint style",
+            "outdentAttributes": {
+              "title": "Outdent attributes",
+              "type": "boolean",
+              "default": true
+            },
+            "splitOperatorsAtLineEnd": {
+              "title": "Split operators at line end",
+              "type": "boolean",
+              "default": false
+            },
+            "templateConstraintsStyle": {
+              "title": "Template constraints style",
               "type": "string",
               "enum": [
                 "conditionalNewlineIndent",
@@ -285,8 +300,8 @@
               ],
               "default": "conditionalNewlineIndent"
             },
-            "dfmtSingleTemplateConstraintIndent": {
-              "title": "Single template constraint indent",
+            "templateConstraintsSingleIndent": {
+              "title": "Template constraints single indent",
               "type": "boolean",
               "default": false
             }
