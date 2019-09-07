@@ -133,7 +133,7 @@
             "documentOnTypeFormatting": {
               "title": "Enable on type formatting",
               "type": "boolean",
-              "default": true
+              "default": false
             },
             "rename": {
               "title": "Enable renaming",
