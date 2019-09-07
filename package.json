@@ -396,6 +396,6 @@
   "devDependencies": {
     "@types/bytes": "^3.0.0",
     "@types/glob": "^7.1.1",
-    "@types/node": "^8.10.51"
+    "@types/node": "^8.10.53"
   }
 }
