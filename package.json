@@ -1,7 +1,7 @@
 {
   "name": "ide-dlang",
   "main": "./lib/ide-dlang",
-  "version": "1.16.5",
+  "version": "1.16.6",
   "description": "D language support for Atom-IDE",
   "keywords": [
     "dlang",
