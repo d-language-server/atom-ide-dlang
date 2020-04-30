@@ -1,5 +1,7 @@
 # D support for [Atom IDE](https://ide.atom.io)
 
+## This project is unmaintained
+
 [![APMVersion](https://img.shields.io/apm/v/ide-dlang.svg?style=flat-square)](https://atom.io/packages/ide-dlang)
 
 An Atom-IDE package for [Dlang](https://dlang.org).
